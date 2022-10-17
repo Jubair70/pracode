@@ -6,9 +6,10 @@ const ShowText=()=>{
     return (
         <div>
             <h1>Update Data from an input</h1>
-            <p>Searched Keyword: {text}</p>
+            <p>Searched Keyword: <strong>{text}</strong></p>
             <input 
                 type="text" 
+                placeholder="Search Here"
                 onChange={(e)=>setText(e.target.value)}
             />
         </div>
