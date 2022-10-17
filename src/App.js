@@ -1,9 +1,10 @@
 import './App.css';
+import AddTwoNUmbers from './component/calculator.component';
 
 function App() {
   return (
     <div className='App'>
-        <h1>Something Test for branch</h1>
+        <AddTwoNUmbers/>        
     </div>
   )
 }
