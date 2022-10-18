@@ -1,9 +1,10 @@
 import './App.css';
+import FetchData from './component/FetchData.component'
 
 function App() {
   return (
     <div className='App'>
-        <h1>Something Test for branch</h1>
+      <FetchData/>
     </div>
   )
 }
