@@ -1,9 +1,10 @@
 import './App.css';
+import Counter from './component/counter.component';
 
 function App() {
   return (
     <div className='App'>
-        <h1>Something Test for branch</h1>
+        <Counter/>
     </div>
   )
 }
