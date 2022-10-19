@@ -1,7 +1,6 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState } from "react";
 import "./counter.styles.scss";
 import ShowCounter from './showCounter.component'
-import CounterContext from '../store/total-context'
 
 const Counter = () => {
   const [cnt, setCnt] = useState(0);
@@ -12,13 +11,13 @@ const Counter = () => {
   };
 
   return (
-    <CounterContext.Provider value={cnt}>
-      <ShowCounter/>
+    <>
+      <ShowCounter cnt={cnt}/>
       <div>
         <button onClick={(e) => counterHandler(e)}>Increment</button>
         <button onClick={(e) => counterHandler(e)}>Decrement</button>
       </div>
-    </CounterContext.Provider>
+    </>
   );
 };
 
