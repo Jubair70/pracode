@@ -1,5 +1,4 @@
 import React from 'react';
-import CounterContext from '../store/total-context'
 
 const ShowCounter = (props) =>{
     
