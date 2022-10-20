@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react'
 import './App.css';
-
+let people = [];
 function App() {
-  let people = [];
+ 
   const [searchedText,setSearchedText] = useState('')
   const [filteredList, setFilteredList] = useState(people);
 
