@@ -10,6 +10,7 @@ function App() {
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response=>response.json())
     .then(result=>{
+      console.log(result)
       result.map((elem)=>people.push(elem.name))
       const filtered = people.filter((elem)=>elem.toLowerCase().includes(searchedText.toLowerCase()))
       setFilteredList(filtered)
@@ -32,4 +33,4 @@ function App() {
     </div>
   )
 }
-export default App;
+export default React.memo(App);
