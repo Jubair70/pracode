@@ -1,3 +1,15 @@
-.App {
-  text-align: center;
+.customDiv{
+  margin: 10px;
+  border: 2px solid gray;
+  width: 350px;
+  height: 200px;
+  padding: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+select{
+  width: 200px;
+}
+li{
+  cursor: pointer;
 }

@@ -1,32 +1,26 @@
-import React,{useContext, useState} from "react";
-import TotalContext from "../store/total-context";
-import PurchaseComponent from "./purchase.component";
-import TotalComponent from "./total.component";
+import {useSelector,useDispatch} from 'react-redux';
+import { deleteItem } from '../store/purchaseSlice';
+const Cart=()=>{
+    const cart = useSelector(state=>state.pr.cart);
+    const dispatch = useDispatch();
+    const deleteHandler = (index,price)  => {
+        dispatch(deleteItem({index,price}))
+    }
+    return(
+        <div className='customDiv'>
+            <h3>Cart Component</h3>
+            <hr/>
+            <ul>
+                {
+                    cart.map((product,index)=>{
+                        return(
+                            <li key={index} onClick={()=>deleteHandler(index,product.price)}>{product.pName}</li>
+                        )
+                    })
+                }
+            </ul>
+        </div>
+    )
+}
 
-const CartComponent = () => {
-    const {total,setTotal,cartItems, setCartItems} = useContext(TotalContext)
-
-  const deleteItem = (e) =>{
-    setTotal(total-parseInt(e.target.value));
-    let cartList = cartItems.filter((item)=>item.price!=e.target.value)
-    setCartItems(cartList) 
-  }
-  return (
-    <div className="customDiv">
-      <h2>Cart Component</h2>
-      <hr />
-      <ul >
-        {
-            cartItems.map((prop,index)=>{
-                return(
-                    <li value={prop.price} key={index} onClick={(e)=>deleteItem(e)}>{prop.pName}</li>
-                )
-            })
-        }
-      </ul>
-    </div>
-    
-  );
-};
-
-export default React.memo(CartComponent);
+export default Cart;

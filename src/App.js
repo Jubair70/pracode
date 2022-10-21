@@ -1,10 +1,14 @@
 import './App.css';
-import PurchaseComponent from './component/purchase.component'
+import Purchase from './component/Purchase.component'
+import Cart from './component/Cart.component'
+import Total from './component/Total.component';
 
 function App() {
   return (
     <div className='App'>
-        <PurchaseComponent/>
+        <Purchase/>
+        <Cart/>
+        <Total/>
     </div>
   )
 }
