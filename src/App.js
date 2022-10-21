@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import './App.css';
+import Child from './Child';
 
 function App() {
+  const [initialState,setInitialState] = useState("Parent State")
   return (
     <div className='App'>
-        <h1>Something Test for branch</h1>
+      <Child props={{initialState,setInitialState}}/>
+       
+        
     </div>
   )
 }
