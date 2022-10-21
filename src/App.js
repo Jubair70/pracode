@@ -1,17 +1,26 @@
 import './App.css';
-import {useState} from 'react'
+import {useState,Component} from 'react'
 
-function App() {
-  const [show,setShow] = useState(true)
-  return (
-    <div className='App'>
-        <button onClick={()=>setShow((prevState)=>!prevState
-        )}>Toggle:{show?'Hide':'Show'}</button>
-        {
-          show && <h1>Hello world</h1>
-        }
-    </div>
-  )
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      show:true
+    }
+  }
+  
+  render(){
+    return (
+      <div className='App'>
+          <button onClick={()=>this.setState((prevState)=>({...prevState,show: !prevState.show})
+          )}>Toggle:{this.state.show?'Hide':'Show'}</button>
+          {
+            this.state.show && <h1>Hello world</h1>
+          }
+      </div>
+    )
+  }
+  
 }
 
 export default App;
