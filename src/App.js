@@ -1,9 +1,15 @@
+import { useRef } from 'react';
 import './App.css';
+import Child from './component/Child';
 
 function App() {
+  const childRef = useRef();
   return (
     <div className='App'>
-        <h1>Something Test for branch</h1>
+      <Child ref={childRef}/>
+      <button onClick={()=>{
+        childRef.current.getALert()
+      }}> Click </button>
     </div>
   )
 }
